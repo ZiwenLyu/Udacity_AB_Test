@@ -61,7 +61,8 @@ There are two methods to size the sample and track multiple metrics while not in
 Assume the independence of each metric:
 
 - αoverall = 1 - (1- αindividual)^n
-- Bonferroni Correction
+
+Bonferroni Correction: 
 - αindividual = αoverall / n
 
 However, since three evaluation metrics are correlated and move together, it will be too conservative to use Bonferroni correction. So we will compute the appropriate number of samples by using standard errors to ensure the size and the power of metrics. (The online calculator)
@@ -118,10 +119,25 @@ Accroding to the data from Udacity, although in total we have 690,203 pageviews,
 #### Effect Size Tests
 We computed the confidence interval around the observed differences and compare with the practical differences (dmin) to see if the experiment generates significant results statistically and practically.
 
-
+|  Metrics | Gross Conversion  | Net Conversion | 
+|------------- | ------------- | ------------- |
+| Obeserved differences | -0.0206 | -0.0048 |
+| Minimal practical differences | 0.01 | 0.0075 |
+| CI lower bound | -0.0291 | -0.0116 | 
+| CI upper bound | -0.0120 | 0.0019 | 
+| Statistically Significant | True | False |
+| Practically Significant | True | False |
 
 #### Sign Tests
-For each of your evaluation metrics, do a sign test using the day-by-day data, and report the p-value of the sign test and whether the result is statistically significant. (These should be the answers from the "Sign Tests" quiz.)
+In order to double check the analytical result, we conducted a traditional sign test using the day-by-day data, measuring the p-value of the sign test whether the result is statistically significant.
+
+|  Metrics | Gross Conversion  | Net Conversion | 
+|------------- | ------------- | ------------- |
+| P-value | 0.0025 | 0.6776 |
+| α | 0.05 | 0.05 |
+| Statistically Significant | True | False |
+
+Gross conversion is both statistically and practically significant, while the net conversion is neither statistically and practically significant. The sign test result matches the result we drew from the effect size test.
 
 ## Summary
 State whether you used the Bonferroni correction, and explain why or why not. If there are any discrepancies between the effect size hypothesis tests and the sign tests, describe the discrepancy and why you think it arose.
