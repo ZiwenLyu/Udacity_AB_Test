@@ -114,7 +114,7 @@ To ensure the test run properly, we will conduct the sanity check on three invar
 
 
 ### Result Analysis
-Accroding to the data from Udacity, although in total we have 690,203 pageviews, we miss the last 14 days' enrollment and payment. Because the payment of students who tried for free in last 14 days wasn't trackable, so we will only have 23 days' data and 423,525 pageviews in total.
+Accroding to the data from Udacity, although in total we have 690,203 pageviews, we missed the last 14 days' enrollment and payment. Because the payment of students who tried for free within last 14 days was out of the tracking duration, so we will only have 23 days' data and 423,525 pageviews in total.
 
 #### Effect Size Tests
 We computed the confidence interval around the observed differences and compare with the practical differences (dmin) to see if the experiment generates significant results statistically and practically.
