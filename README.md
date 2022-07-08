@@ -65,7 +65,7 @@ Assume the independence of each metric:
 Bonferroni Correction: 
 - αindividual = αoverall / n
 
-However, since three evaluation metrics are correlated and move together, it will be too conservative to use Bonferroni correction. So we will compute the appropriate number of samples by using standard errors to ensure the size and the power of metrics. (The online calculator)
+However, since three evaluation metrics are correlated and move together, it will be too conservative to use Bonferroni correction. So we will compute the appropriate number of samples by using standard errors to ensure the size and the power of metrics. [The online calculator](https://www.evanmiller.org/ab-testing/sample-size.html)
 
 **Gross Conversion**:
 - Baseline Conversion: 20.625%
