@@ -140,12 +140,31 @@ In order to double check the analytical result, we conducted a traditional sign 
 Gross conversion is both statistically and practically significant, while the net conversion is neither statistically and practically significant. The sign test result matches the result we drew from the effect size test.
 
 ## Summary
-State whether you used the Bonferroni correction, and explain why or why not. If there are any discrepancies between the effect size hypothesis tests and the sign tests, describe the discrepancy and why you think it arose.
+The experiment is conducted to test the new feature of free trial screener on Udacity. Students were recorded as unique cookies and divided into the control and experiment groups. The experiment group got a survey to enter their weekly study time after they clicked starting the free trial, and if they only could commit less than 5 hours per week, the Udacity would pop up a message to suggest them access to free course materials instead of choosing the free trial. Number of pageviews, number of free trial clicks (before the survey and commit time reminder), and the click-through probability are invariant metrics. Gross conversion (enrollments/clicks) and net conversion (payments/clicks) are served as evaluation metrics.
+
+Recall the hypotheses:
+- H0: Gross Conversion(exp) = Gross Conversion(cont)
+- H1:Gross Conversion(exp) ≠ Gross Conversion(cont)
+- H0: Net Conversion(exp) = Net Conversion(cont)
+- H1:Net Conversion(exp) ≠ Net Conversion(cont)
+
+As expected the observed gross conversion is 2.06% lower than the control group; Besides, the result indicates statistical and practical significance. The observed net conversion in the experiment group is 0.48% suprisingly lower than the control group, and the result is neither statsically nor practically sginificant to the business. Therefore: the H0:Gross Conversion(exp) = Gross Conversion(cont) is rejected, while the H0: Net Conversion(exp) = Net Conversion(cont) cannot be rejected.
 
 ### Recommendation
-Make a recommendation and briefly describe your reasoning.
+From the analysis we can see that, the free trial screener is able to effectively filter out parts of students who may not commit to the study, which explains the sliding gross conversion. Maybe the change clearly set expections upfront and reduce the number of frustrated students, however, this new feature is less likely to relatively increase payments after the 14-day trial. Though the data from Udacity which didn't meet the required test size may skew the result to some degree, considering the cost in updating the new feature and barely payments growth, I suggest do not launch this new function. 
 
-### Follow-Up Experiment
-Give a high-level description of the follow up experiment you would run, what your hypothesis would be, what metrics you would want to measure, what your unit of diversion would be, and your reasoning for these choices.gener
+### Follow-Up Experiment: How to Reduce Early Cancellations
+Since Udacity would like to lessen early cancellations after the 14-day trial, we need to figure out other factors may cause this kind of behavior besides the insufficient time to commit to study. 
 
+In order to understand why many students churn during the 14-day trial, I recommend to conduct follow-up qualitative experiments to dig into this question. Udacity may organize focus groups first to get a feel about what other factors contributing to the early cancellations. Then, Udacity may launch surveys to students who churn before the 14-day boundary and let them rank factors leading to unsubscriptions, as well as asking questions about their experience of their learning, the time pressure, the coach supports, the difficult level, etc. Some top answers could better explain the churn problem than the study time issue.
+
+Then, combining with the result from the qualitative research, Udacity may modify their features and design another test. For instance, most students reported the 14-day trial is too long as they lost interests in learning or they finished courses within 14 days, so the new feature may shorten the free trial period to 7 days. 
+
+To set up the new experiment, enrolled users will be equally diverted into the control and experiment groups. The unit of diversion will be user IDs. The evaluation metric will be retention, which is the number of students remain after 14 days (at least pay once) divided by the number of students who enrolled the free trial. 
+So the new hypothesis is:
+
+- H0: Retention(exp) = Retention(cont)
+- H1: Retention(exp) ≠ Retention(cont)
+
+In our expectation, reducing the free trial duration will lead to a higher payment conversion. If the observed retention is both statistically and practically significant and indicates a positive change, the new feature could be gradually popularized to users.
 
